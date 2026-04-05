@@ -5,7 +5,7 @@ const corsOptions = {
       "http://localhost:3000",
       "http://localhost:3001",
       "http://localhost:5173",
-      "http://192.168.1.5:3000",
+      "https://ainextro.vercel.app",
       "http://192.168.1.16:3000",
       "http://192.168.1.16:3001",
       "http://192.168.1.3:3000"
