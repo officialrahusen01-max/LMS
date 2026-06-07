@@ -24,12 +24,11 @@ const blogSchema = new mongoose.Schema({
 blogSchema.index({ title: 'text', content: 'text' });
 
 // Slug generation may be handled in service layer; keep hook placeholder
-blogSchema.pre('save', function(next) {
+blogSchema.pre('save', function() {
   // Optionally generate slug if not provided (service layer can override)
   if (!this.slug && this.title) {
     this.slug = this.title.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
   }
-  next();
 });
 
 export default mongoose.model('Blog', blogSchema);
